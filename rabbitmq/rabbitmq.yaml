@@ -65,6 +65,18 @@ data:
           "vhost": "/",
           "arguments": {}
         }
+      ],
+      "policies": [
+        {
+          "name": "default",
+          "pattern": ".*",
+          "apply-to": "queues",
+          "vhost": "/",
+          "definition": {
+            "max-length-bytes": 10485760,
+            "max-length": 64
+          }
+        }
       ]
     }
 
