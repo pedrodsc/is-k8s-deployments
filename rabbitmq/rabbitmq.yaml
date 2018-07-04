@@ -105,6 +105,7 @@ spec:
         resources:
           limits:
             memory: 2Gi
+            cpu: "2"
         volumeMounts:
         - name: rabbitmq-config
           mountPath: /etc/rabbitmq/
