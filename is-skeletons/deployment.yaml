@@ -173,14 +173,14 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-heatmap:1
+        image: viros/is-skeletons-heatmap:1.1
         command: ["python"]
         args: ["service.py", "/opt/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
             cpu: "1"
-            memory: 128Mi
+            memory: 256Mi
         volumeMounts:
           - name: options
             mountPath: /opt
