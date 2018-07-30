@@ -17,7 +17,7 @@ data:
       "model": "MOBILENET_THIN",
       "resize_out_ratio": 4.0
     }
-  grouper_1000: |-
+  grouper_0: |-
     {
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
@@ -25,7 +25,17 @@ data:
       "cameras_ids": [0, 1, 2, 3, 4],
       "referencial": 1000,
       "min_error": 50.0,
-      "period_ms": 100
+      "period_ms": 200
+    }
+  grouper_1: |-
+    {
+      "broker_uri": "amqp://rabbitmq.default",
+      "zipkin_host": "zipkin.default",
+      "zipkin_port": 9411,
+      "cameras_ids": [0, 2, 4, 6],
+      "referencial": 1000,
+      "min_error": 50.0,
+      "period_ms": 200
     }
   heatmap_1000: |-
     {
@@ -35,13 +45,15 @@ data:
       "topic_id": 1000,
       "limits": {
         "xmin": -2.5,
-        "xmax": 5.0,
+        "xmax": 7.5,
         "ymin": -2.5,
-        "ymax": 5.0
+        "ymax": 12.5
       },
       "bins_step": 0.05,
       "output_scale": 5.0,
+      "output_rotate": "ROTATE_90_CW",
       "referencial": {
+        "id": 1000,
         "x": 0.0,
         "y": 0.0,
         "length": 50
@@ -50,7 +62,8 @@ data:
       "flip_horizontal": true,
       "flip_vertical": false,
       "log_scale": true,
-      "average_coordinates": false
+      "average_coordinates": false,
+      "samples": 10000
     }
 
 ---
@@ -139,9 +152,21 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-grouper:2.1
+        image: viros/is-skeletons-grouper:2.2
         command: ["/service.bin"]
-        args: ["/opt/options.json"]
+        args: ["/opt/options_0.json"]
+        imagePullPolicy: Always
+        resources:
+          limits: 
+            cpu: "1"
+            memory: 128Mi
+        volumeMounts:
+          - name: options
+            mountPath: /opt
+      - name: "1"
+        image: viros/is-skeletons-grouper:2.2
+        command: ["/service.bin"]
+        args: ["/opt/options_1.json"]
         imagePullPolicy: Always
         resources:
           limits: 
@@ -155,8 +180,10 @@ spec:
         configMap:
           name: skeletons
           items:
-          - key: grouper_1000
-            path: options.json
+          - key: grouper_0
+            path: options_0.json
+          - key: grouper_1
+            path: options_1.json
 
 ---
 
@@ -173,7 +200,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-heatmap:1.1
+        image: viros/is-skeletons-heatmap:1.2
         command: ["python"]
         args: ["service.py", "/opt/options.json"]
         imagePullPolicy: Always
