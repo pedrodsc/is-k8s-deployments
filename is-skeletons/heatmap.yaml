@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skeletons-heatmap
+  namespace: default
+data:
+  heatmap_1000: |-
+    {
+      "broker_uri": "amqp://10.10.2.15:30000",
+      "zipkin_host": "10.10.2.15",
+      "zipkin_port": 30200,
+      "topic_id": 1000,
+      "limits": {
+        "xmin": -2.5,
+        "xmax": 7.5,
+        "ymin": -2.5,
+        "ymax": 15.0
+      },
+      "bins_step": 0.05,
+      "output_scale": 5.0,
+      "output_rotate": "ROTATE_90_CW",
+      "referencial": {
+        "id": 1000,
+        "x": 0.0,
+        "y": 0.0,
+        "length": 50
+      },
+      "draw_grid": true,
+      "flip_horizontal": true,
+      "flip_vertical": false,
+      "log_scale": true,
+      "average_coordinates": false,
+      "samples": 10000
+    }
+
+---
+
+apiVersion: extensions/v1beta1 
+kind: Deployment
+metadata:
+  name: "is-skeletons-heatmap-1000"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: heatmap
+    spec:
+      containers:
+      - name: "0"
+        image: viros/is-skeletons-heatmap:1.2
+        command: ["python"]
+        args: ["service.py", "/opt/options.json"]
+        imagePullPolicy: Always
+        resources:
+          limits: 
+            cpu: "1"
+            memory: 256Mi
+        volumeMounts:
+          - name: options
+            mountPath: /opt
+      volumes:
+      - name: options
+        configMap:
+          name: skeletons-heatmap
+          items:
+          - key: heatmap_1000
+            path: options.json
