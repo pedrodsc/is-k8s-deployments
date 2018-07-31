@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-grouper:2.2
+        image: viros/is-skeletons-grouper:2.3
         command: ["/service.bin"]
         args: ["/opt/options_0.json"]
         imagePullPolicy: Always
@@ -52,7 +52,7 @@ spec:
           - name: options
             mountPath: /opt
       - name: "1"
-        image: viros/is-skeletons-grouper:2.2
+        image: viros/is-skeletons-grouper:2.3
         command: ["/service.bin"]
         args: ["/opt/options_1.json"]
         imagePullPolicy: Always

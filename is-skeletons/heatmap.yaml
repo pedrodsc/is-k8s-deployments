@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-heatmap:1.2
+        image: viros/is-skeletons-heatmap:1.3
         command: ["python"]
         args: ["service.py", "/opt/options.json"]
         imagePullPolicy: Always
