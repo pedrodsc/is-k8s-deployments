@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons:1.2-detector
+        image: viros/is-skeletons-detector:1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
@@ -46,7 +46,7 @@ spec:
           - name: options
             mountPath: /opt
       - name: "1"
-        image: viros/is-skeletons:1.2-detector
+        image: viros/is-skeletons-detector:1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
@@ -58,7 +58,7 @@ spec:
           - name: options
             mountPath: /opt
       - name: "2"
-        image: viros/is-skeletons:1.2-detector
+        image: viros/is-skeletons-detector:1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
@@ -70,7 +70,7 @@ spec:
           - name: options
             mountPath: /opt
       - name: "3"
-        image: viros/is-skeletons:1.2-detector
+        image: viros/is-skeletons-detector:1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always

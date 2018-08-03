@@ -23,11 +23,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -55,11 +55,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -87,11 +87,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -119,11 +119,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -151,11 +151,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -183,11 +183,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -215,11 +215,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
@@ -247,11 +247,11 @@ data:
         "camera": {},
         "image": {
           "color_space": {
-            "value": "GRAY"
+            "value": "RGB"
           },
           "resolution": {
-            "width": 1440,
-            "height": 1080
+            "width": 720,
+            "height": 540
           },
           "format": {
             "format": "JPEG",
