@@ -9,10 +9,17 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "cameras_ids": [0, 1, 2, 3, 4],
+      "cameras": {
+        "0": { "max_width": { "value": 0.5 }},
+        "1": {},
+        "2": {},
+        "3": {},
+        "4": {}
+      },
       "referential": 1000,
-      "min_error": 50.0,
-      "period_ms": 100,
+      "min_error": 30.0,
+      "min_score": 0.4,
+      "period_ms": 200,
       "release_samples": 5
     }
   grouper_1: |-
@@ -20,10 +27,16 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "cameras_ids": [0, 2, 4, 6],
+      "cameras": {
+        "0": { "min_width": { "value": 0.5 }},
+        "2": {},
+        "4": {},
+        "6": {}
+      },
       "referential": 1001,
-      "min_error": 50.0,
-      "period_ms": 100,
+      "min_error": 30.0,
+      "min_score": 0.4,
+      "period_ms": 200,
       "release_samples": 5
     }
   grouper_2: |-
@@ -32,9 +45,15 @@ data:
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
       "cameras_ids": [5, 6, 7],
+      "cameras": {
+        "5": {},
+        "6": { "min_width": { "value": 0.25 }, "max_width": { "value": 0.75 }},
+        "7": {}
+      },
       "referential": 1003,
-      "min_error": 50.0,
-      "period_ms": 100,
+      "min_error": 30.0,
+      "min_score": 0.4,
+      "period_ms": 200,
       "release_samples": 5
     }
 
@@ -53,7 +72,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-grouper:2.4
+        image: viros/is-skeletons-grouper:2.7
         command: ["/service.bin"]
         args: ["/opt/options_0.json"]
         imagePullPolicy: Always
@@ -65,7 +84,7 @@ spec:
           - name: options
             mountPath: /opt
       - name: "1"
-        image: viros/is-skeletons-grouper:2.4
+        image: viros/is-skeletons-grouper:2.7
         command: ["/service.bin"]
         args: ["/opt/options_1.json"]
         imagePullPolicy: Always
@@ -77,7 +96,7 @@ spec:
           - name: options
             mountPath: /opt
       - name: "2"
-        image: viros/is-skeletons-grouper:2.4
+        image: viros/is-skeletons-grouper:2.7
         command: ["/service.bin"]
         args: ["/opt/options_2.json"]
         imagePullPolicy: Always

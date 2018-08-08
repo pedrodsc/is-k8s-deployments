@@ -11,11 +11,11 @@ data:
       "zipkin_port": 9411,
       "models_folder": "/",
       "resize": {
-        "width": 720,
-        "height": 544
+        "width": 432,
+        "height": 368
       },
       "model": "MOBILENET_THIN",
-      "resize_out_ratio": 4.0
+      "resize_out_ratio": 6.0
     }
 
 ---
