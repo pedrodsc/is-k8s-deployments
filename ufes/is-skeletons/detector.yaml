@@ -15,7 +15,9 @@ data:
         "height": 368
       },
       "model": "MOBILENET_THIN",
-      "resize_out_ratio": 6.0
+      "resize_out_ratio": 4.0,
+      "gpu_mem_allow_growth": true,
+      "per_process_gpu_memory_fraction": 0.25
     }
 
 ---
@@ -25,58 +27,60 @@ kind: Deployment
 metadata:
   name: "is-skeletons-detector"
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
         app: detector
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: cheetara
       containers:
       - name: "0"
-        image: viros/is-skeletons-detector:1
+        image: viros/is-skeletons-detector:1.1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
-            cpu: "2"
+            cpu: "1"
             memory: 2048Mi
             nvidia.com/gpu: 1
         volumeMounts:
           - name: options
             mountPath: /opt
       - name: "1"
-        image: viros/is-skeletons-detector:1
+        image: viros/is-skeletons-detector:1.1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
-            cpu: "2"
+            cpu: "1"
             memory: 2048Mi
         volumeMounts:
           - name: options
             mountPath: /opt
       - name: "2"
-        image: viros/is-skeletons-detector:1
+        image: viros/is-skeletons-detector:1.1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
-            cpu: "2"
+            cpu: "1"
             memory: 2048Mi
         volumeMounts:
           - name: options
             mountPath: /opt
       - name: "3"
-        image: viros/is-skeletons-detector:1
+        image: viros/is-skeletons-detector:1.1
         command: ["python"]
         args: ["stream.py", "/opt/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
-            cpu: "2"
+            cpu: "1"
             memory: 2048Mi
         volumeMounts:
           - name: options
