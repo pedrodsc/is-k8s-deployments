@@ -9,9 +9,9 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.61.100.2",
+      "camera_ip": "192.168.1.180",
       "camera_id": 0,
-      "packet_delay": 6000,
+      "packet_delay": 3000,
       "packet_size": 1400,
       "reverse_x": false,
       "reverse_y": false,
@@ -46,9 +46,9 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.61.100.3",
+      "camera_ip": "192.168.1.181",
       "camera_id": 1,
-      "packet_delay": 6000,
+      "packet_delay": 3000,
       "packet_size": 1400,
       "reverse_x": false,
       "reverse_y": false,
@@ -83,9 +83,9 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.61.101.2",
+      "camera_ip": "192.168.1.182",
       "camera_id": 2,
-      "packet_delay": 6000,
+      "packet_delay": 3000,
       "packet_size": 1400,
       "reverse_x": false,
       "reverse_y": false,
@@ -120,9 +120,9 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.61.101.3",
+      "camera_ip": "192.168.1.183",
       "camera_id": 3,
-      "packet_delay": 6000,
+      "packet_delay": 3000,
       "packet_size": 1400,
       "reverse_x": false,
       "reverse_y": false,
@@ -169,10 +169,10 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: monstro
+        kubernetes.io/hostname: titan
       containers:
       - name: "0"
-        image: viros/is-cameras:1.4
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -209,10 +209,10 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: monstro
+        kubernetes.io/hostname: titan
       containers:
       - name: "1"
-        image: viros/is-cameras:1.4
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -249,10 +249,10 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: monstro
+        kubernetes.io/hostname: cheetara
       containers:
       - name: "2"
-        image: viros/is-cameras:1.4
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -289,10 +289,10 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: monstro
+        kubernetes.io/hostname: cheetara
       containers:
       - name: "3"
-        image: viros/is-cameras:1.4
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always

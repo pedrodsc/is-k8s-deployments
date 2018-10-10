@@ -21,7 +21,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -34,7 +34,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam1: |-
    {
@@ -53,7 +54,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -66,7 +67,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam2: |-
     {
@@ -85,7 +87,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -98,7 +100,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam3: |-
     {
@@ -117,7 +120,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -130,7 +133,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam4: |-
     {
@@ -149,7 +153,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -162,7 +166,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam5: |-
     {
@@ -181,7 +186,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -194,7 +199,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam6: |-
     {
@@ -213,7 +219,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -226,7 +232,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
   cam7: |-
     {
@@ -245,7 +252,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "image": {
+        "imag5": {
           "color_space": {
             "value": "RGB"
           },
@@ -258,7 +265,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "SPINNAKER"
     }
 
 ---
@@ -278,7 +286,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "0"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -316,7 +324,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "1"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -354,7 +362,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "2"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -392,7 +400,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "3"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -430,7 +438,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "4"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -468,7 +476,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "5"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -506,7 +514,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "6"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -544,7 +552,7 @@ spec:
       dnsPolicy: "ClusterFirstWithHostNet"
       containers:
       - name: "7"
-        image: viros/is-cameras:1.2
+        image: viros/is-cameras:1.5
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always

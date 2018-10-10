@@ -6,14 +6,14 @@ metadata:
 data:
   heatmap: |-
     {
-      "broker_uri": "amqp://10.10.2.15:30000",
-      "zipkin_host": "10.10.2.15",
-      "zipkin_port": 30200,
+      "broker_uri": "amqp://rabbitmq.default",
+      "zipkin_host": "zipkin.default",
+      "zipkin_port": 9411,
       "limits": {
-        "xmin": -2.5,
-        "xmax": 9.0,
+        "xmin": -3.5,
+        "xmax": 3.5,
         "ymin": -2.5,
-        "ymax": 20.0
+        "ymax": 2.5
       },
       "bins_step": 0.05,
       "output_scale": 5.0,
