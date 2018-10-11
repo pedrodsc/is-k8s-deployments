@@ -34,8 +34,8 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-detector:0.0.1
-        command: ["is-skeletons-detector"]
+        image: viros/is-skeletons-detector:0.0.2
+        command: ["is-skeletons-detector-stream"]
         args: ["/opt/is/options.json"]
         imagePullPolicy: Always
         resources:
@@ -47,8 +47,8 @@ spec:
           - name: options
             mountPath: /opt
       - name: "1"
-        image: viros/is-skeletons-detector:0.0.1
-        command: ["is-skeletons-detector"]
+        image: viros/is-skeletons-detector:0.0.2
+        command: ["is-skeletons-detector-stream"]
         args: ["/opt/is/options.json"]
         imagePullPolicy: Always
         resources:

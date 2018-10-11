@@ -9,6 +9,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
+      "id": 0,
       "cameras": {
         "0" : {"vertices": [{"x": 0.0, "y": 0.0}, {"x": 0.5, "y": 1.0}]},
         "1": {},
@@ -28,6 +29,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
+      "id": 1,
       "cameras": {
         "0" : {"vertices": [{"x": 0.5, "y": 0.0}, {"x": 1.0, "y": 1.0}]},
         "2": {},
@@ -46,6 +48,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
+      "id": 2,
       "cameras": {
         "5" : {"vertices": [{"x": 0.1, "y": 0.0}, {"x": 0.75, "y": 1.0}]},
         "6" : {"vertices": [{"x": 0.25, "y": 0.0}, {"x": 0.75, "y": 1.0}]},
@@ -74,9 +77,9 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-grouper:2.9
+        image: viros/is-skeletons-grouper:0.0.1
         command: ["/service.bin"]
-        args: ["/opt/options_0.json"]
+        args: ["/conf/options_0.json"]
         imagePullPolicy: Always
         resources:
           limits: 
@@ -84,11 +87,11 @@ spec:
             memory: 128Mi
         volumeMounts:
           - name: options
-            mountPath: /opt
+            mountPath: /conf/
       - name: "1"
-        image: viros/is-skeletons-grouper:2.9
+        image: viros/is-skeletons-grouper:0.0.1
         command: ["/service.bin"]
-        args: ["/opt/options_1.json"]
+        args: ["/conf/options_1.json"]
         imagePullPolicy: Always
         resources:
           limits: 
@@ -96,11 +99,11 @@ spec:
             memory: 128Mi
         volumeMounts:
           - name: options
-            mountPath: /opt
+            mountPath: /conf/
       - name: "2"
-        image: viros/is-skeletons-grouper:2.9
+        image: viros/is-skeletons-grouper:0.0.1
         command: ["/service.bin"]
-        args: ["/opt/options_2.json"]
+        args: ["/conf/options_2.json"]
         imagePullPolicy: Always
         resources:
           limits: 
@@ -108,7 +111,7 @@ spec:
             memory: 128Mi
         volumeMounts:
           - name: options
-            mountPath: /opt
+            mountPath: /conf/
       volumes:
       - name: options
         configMap:

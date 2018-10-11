@@ -9,6 +9,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
+      "id": 0,
       "cameras": {
         "0": {},
         "1": {},
