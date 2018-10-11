@@ -6,9 +6,10 @@ metadata:
 data:
   heatmap: |-
     {
-      "broker_uri": "amqp://10.10.2.15:30000",
-      "zipkin_host": "10.10.2.15",
-      "zipkin_port": 30200,
+      "broker_uri": "amqp://rabbitmq.default",
+      "zipkin_host": "zipkin.default",
+      "zipkin_port": 9411,
+      "group_ids": [0, 1, 2],
       "limits": {
         "xmin": -2.5,
         "xmax": 9.0,
@@ -35,6 +36,7 @@ data:
 
 ---
 
+
 apiVersion: extensions/v1beta1 
 kind: Deployment
 metadata:
@@ -48,9 +50,9 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-heatmap:1.4
-        command: ["python"]
-        args: ["service.py", "/opt/options.json"]
+        image: viros/is-skeletons-heatmap:0.0.1
+        command: ["is-skeletons-heatmap"]
+        args: ["/conf/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
@@ -58,7 +60,7 @@ spec:
             memory: 256Mi
         volumeMounts:
           - name: options
-            mountPath: /opt
+            mountPath: /conf/
       volumes:
       - name: options
         configMap:

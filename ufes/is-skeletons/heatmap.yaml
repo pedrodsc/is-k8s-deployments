@@ -9,15 +9,16 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
+      "group_ids": [0],
       "limits": {
-        "xmin": -3.5,
-        "xmax": 3.5,
+        "xmin": -4.0,
+        "xmax": 4.0,
         "ymin": -2.5,
         "ymax": 2.5
       },
       "bins_step": 0.05,
       "output_scale": 5.0,
-      "output_rotate": "ROTATE_90_CW",
+      "output_rotate": "NONE",
       "referential": {
         "x": 0.0,
         "y": 0.0,
@@ -48,9 +49,9 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-heatmap:1.4
-        command: ["python"]
-        args: ["service.py", "/opt/options.json"]
+        image: viros/is-skeletons-heatmap:0.0.1
+        command: ["is-skeletons-heatmap"]
+        args: ["/conf/options.json"]
         imagePullPolicy: Always
         resources:
           limits: 
@@ -58,7 +59,7 @@ spec:
             memory: 256Mi
         volumeMounts:
           - name: options
-            mountPath: /opt
+            mountPath: /conf/
       volumes:
       - name: options
         configMap:
