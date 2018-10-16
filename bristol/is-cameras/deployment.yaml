@@ -21,7 +21,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -54,7 +54,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -87,7 +87,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -120,7 +120,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -153,7 +153,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -186,7 +186,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -219,7 +219,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },
@@ -252,7 +252,7 @@ data:
           "frequency": 5.0
         },
         "camera": {},
-        "imag5": {
+        "image": {
           "color_space": {
             "value": "RGB"
           },

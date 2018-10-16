@@ -78,7 +78,7 @@ spec:
       containers:
       - name: "0"
         image: viros/is-skeletons-grouper:0.0.1
-        command: ["/service.bin"]
+        command: ["./service.bin"]
         args: ["/conf/options_0.json"]
         imagePullPolicy: Always
         resources:
@@ -90,7 +90,7 @@ spec:
             mountPath: /conf/
       - name: "1"
         image: viros/is-skeletons-grouper:0.0.1
-        command: ["/service.bin"]
+        command: ["./service.bin"]
         args: ["/conf/options_1.json"]
         imagePullPolicy: Always
         resources:
@@ -102,7 +102,7 @@ spec:
             mountPath: /conf/
       - name: "2"
         image: viros/is-skeletons-grouper:0.0.1
-        command: ["/service.bin"]
+        command: ["./service.bin"]
         args: ["/conf/options_2.json"]
         imagePullPolicy: Always
         resources:

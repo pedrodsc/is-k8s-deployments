@@ -41,7 +41,7 @@ data:
           "name": "is",
           "vhost": "/",
           "type": "topic",
-          "durable": true,
+          "durable": false,
           "auto_delete": false,
           "internal": false,
           "arguments": {}
