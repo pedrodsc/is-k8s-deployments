@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-grouper:0.0.1
+        image: viros/is-skeletons-grouper:0.0.2
         command: ["./service.bin"]
         args: ["/conf/options_0.json"]
         imagePullPolicy: Always

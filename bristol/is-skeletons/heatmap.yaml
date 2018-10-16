@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
       - name: "0"
-        image: viros/is-skeletons-heatmap:0.0.1
+        image: viros/is-skeletons-heatmap:0.0.2
         command: ["is-skeletons-heatmap"]
         args: ["/conf/options.json"]
         imagePullPolicy: Always
