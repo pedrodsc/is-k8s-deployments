@@ -1,0 +1,12 @@
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+controllerManagerExtraArgs:
+  horizontal-pod-autoscaler-use-rest-clients: "true"
+  horizontal-pod-autoscaler-downscale-delay: "2m"
+  horizontal-pod-autoscaler-upscale-delay: "2m"
+  horizontal-pod-autoscaler-sync-period: "30s"
+  address: 0.0.0.0
+schedulerExtraArgs:
+  address: 0.0.0.0
+apiServerExtraArgs:
+  runtime-config: "api/all=true"
