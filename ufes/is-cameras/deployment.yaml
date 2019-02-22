@@ -9,7 +9,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "192.168.1.180",
+      "camera_ip": "10.10.10.0",
       "camera_id": 0,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -39,14 +39,15 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "FLYCAPTURE"
     }
   cam1: |-
    {
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "192.168.1.181",
+      "camera_ip": "10.10.10.1",
       "camera_id": 1,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -76,14 +77,15 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "FLYCAPTURE"
     }
   cam2: |-
     {
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "192.168.1.182",
+      "camera_ip": "10.10.10.2",
       "camera_id": 2,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -113,14 +115,15 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "FLYCAPTURE"
     }
   cam3: |-
     {
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "192.168.1.183",
+      "camera_ip": "10.10.10.3",
       "camera_id": 3,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -150,7 +153,8 @@ data:
             "compression": 0.8
           }
         }
-      }
+      },
+      "camera_driver": "FLYCAPTURE"
     }
 
 ---
@@ -172,7 +176,7 @@ spec:
         kubernetes.io/hostname: titan
       containers:
       - name: "0"
-        image: viros/is-cameras:1.5
+        image: labviros/is-cameras:0.0.1
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -209,10 +213,10 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: titan
+        kubernetes.io/hostname: dirac
       containers:
       - name: "1"
-        image: viros/is-cameras:1.5
+        image: labviros/is-cameras:0.0.1
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -252,7 +256,7 @@ spec:
         kubernetes.io/hostname: cheetara
       containers:
       - name: "2"
-        image: viros/is-cameras:1.5
+        image: labviros/is-cameras:0.0.1
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
@@ -289,10 +293,10 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: cheetara
+        kubernetes.io/hostname: monstro
       containers:
       - name: "3"
-        image: viros/is-cameras:1.5
+        image: labviros/is-cameras:0.0.1
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always

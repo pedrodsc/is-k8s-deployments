@@ -12,7 +12,8 @@ data:
         "cpu_parallelism": 0,
         "dictionary": "DICT_4X4_50",
         "lengths": {
-          "0": 0.300
+          "0": 0.300,
+          "1": 0.180
         }
       }
     }
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
       - name: service 
-        image: viros/is-aruco:0.0.3
+        image: labviros/is-aruco-detector:0.0.4
         command: ["/service.bin"]
         args: ["/opt/options.json"]
         imagePullPolicy: Always
