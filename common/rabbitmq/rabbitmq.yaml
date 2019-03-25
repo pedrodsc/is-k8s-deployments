@@ -94,6 +94,8 @@ spec:
       labels:
         app: rabbitmq
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: k8s-cpu-slave-0
       containers:
       - name: rabbitmq
         image: rabbitmq:3.7.6-management

@@ -9,7 +9,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.10.10.0",
+      "camera_ip": "10.61.100.2",
       "camera_id": 0,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -47,7 +47,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.10.10.1",
+      "camera_ip": "10.61.100.3",
       "camera_id": 1,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -85,7 +85,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.10.10.2",
+      "camera_ip": "10.61.101.2",
       "camera_id": 2,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -123,7 +123,7 @@ data:
       "broker_uri": "amqp://rabbitmq.default",
       "zipkin_host": "zipkin.default",
       "zipkin_port": 9411,
-      "camera_ip": "10.10.10.3",
+      "camera_ip": "10.61.101.3",
       "camera_id": 3,
       "packet_delay": 3000,
       "packet_size": 1400,
@@ -173,7 +173,7 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: titan
+        kubernetes.io/hostname: k8s-cpu-slave-0
       containers:
       - name: "0"
         image: labviros/is-cameras:0.0.1
@@ -213,7 +213,7 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: dirac
+        kubernetes.io/hostname: k8s-cpu-slave-0
       containers:
       - name: "1"
         image: labviros/is-cameras:0.0.1
@@ -253,7 +253,7 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: cheetara
+        kubernetes.io/hostname: k8s-cpu-slave-1
       containers:
       - name: "2"
         image: labviros/is-cameras:0.0.1
@@ -293,7 +293,7 @@ spec:
       hostNetwork: true
       dnsPolicy: "ClusterFirstWithHostNet"
       nodeSelector:
-        kubernetes.io/hostname: monstro
+        kubernetes.io/hostname: k8s-cpu-slave-1
       containers:
       - name: "3"
         image: labviros/is-cameras:0.0.1
