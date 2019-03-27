@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: is-mjpeg-server
-        image: viros/is-mjpeg-server:1.0.1
+        image: labviros/is-mjpeg-server:0.0.1
         env:
         - name: IS_URI
           value: 'amqp://rabbitmq.default'
