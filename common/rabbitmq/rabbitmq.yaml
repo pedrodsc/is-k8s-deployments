@@ -82,13 +82,16 @@ data:
 
 ---
 
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rabbitmq
   namespace: default
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+        app: rabbitmq
   template:
     metadata:
       labels:
@@ -104,7 +107,7 @@ spec:
         - containerPort: 15672
         resources:
           limits:
-            memory: 2Gi
+            memory: 1Gi
             cpu: "2"
         volumeMounts:
         - name: rabbitmq-config
