@@ -44,9 +44,12 @@ Add yourself to the `docker` group
 
     $ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
     
-**1.7** install nvidia driver
-
-    $ sudo apt install nvidia-driver-440
+**1.7** install nvidia toolkit
+    
+    $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+    $ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+    $ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+    $ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-driver-440
     
     $ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.6.0/nvidia-device-plugin.yml
 
